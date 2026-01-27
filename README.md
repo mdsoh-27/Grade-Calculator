@@ -4,11 +4,11 @@ A responsive web-based GPA calculator for Raghu Engineering College (REC) and Ra
 
 ## Features
 
-- 🎓 Separate calculators for REC and RIT with different grading scales
-- 📱 Fully responsive design
-- 🎨 Modern dark theme with glassmorphism effects
-- ⚡ Zero dependencies - pure HTML, CSS, and JavaScript
-- 🧮 Real-time GPA calculation
+-  Separate calculators for REC and RIT with different grading scales
+-  Fully responsive design
+-  Modern dark theme with glassmorphism effects
+-  Zero dependencies - pure HTML, CSS, and JavaScript
+-  Real-time GPA calculation
 
 ## Grading Scales
 
