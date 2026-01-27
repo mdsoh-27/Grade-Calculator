@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Select your college to calculate GPA - REC or RIT grade calculator">
+  <title>Select College - Grade Point Calculator</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Design Tokens */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+      --bg-dark: #0f0f23;
+      --bg-card: rgba(255, 255, 255, 0.05);
+      --bg-card-hover: rgba(255, 255, 255, 0.08);
+
+      --text-primary: #ffffff;
+      --text-secondary: #b4b4c8;
+
+      --border-color: rgba(255, 255, 255, 0.1);
+
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.3);
+
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --transition-base: 250ms ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--bg-dark);
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing-lg);
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--spacing-md);
+      animation: fadeInDown 0.6s ease-out;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+      animation: fadeInDown 0.6s ease-out 0.1s backwards;
+    }
+
+    .subtitle:last-of-type {
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .selection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-2xl);
+    }
+
+    .college-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 2px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-2xl);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      text-decoration: none;
+      display: block;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .college-card:nth-child(1) {
+      animation-delay: 0.2s;
+      animation-fill-mode: backwards;
+    }
+
+    .college-card:nth-child(2) {
+      animation-delay: 0.3s;
+      animation-fill-mode: backwards;
+    }
+
+    .college-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(102, 126, 234, 0.5);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-8px);
+    }
+
+    .college-icon {
+      font-size: 4rem;
+      margin-bottom: var(--spacing-lg);
+      display: block;
+    }
+
+    .college-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .college-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: var(--spacing-2xl);
+      padding-top: var(--spacing-xl);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      .selection-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Grade Point Calculator</h1>
+    <p class="subtitle">Select your college to calculate your GPA</p>
+    <p class="subtitle">Exclusively for 2022 - 2026 Batch</p>
+
+    <div class="selection-grid">
+      <a href="rec-calculator.html" class="college-card">
+        <span class="college-icon">🎓</span>
+        <h2 class="college-name">REC</h2>
+        <p class="college-description">Raghu Engineering College<br>GPA Calculation</p>
+      </a>
+
+      <a href="rit-calculator.html" class="college-card">
+        <span class="college-icon">📚</span>
+        <h2 class="college-name">RIT</h2>
+        <p class="college-description">Raghu Institute of Technology<br>GPA Calculation</p>
+      </a>
+    </div>
+
+    <footer class="footer">
+      <p>© 2026 mdsohhh</p>
+    </footer>
+  </div>
+</body>
+
+</html>

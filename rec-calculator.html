@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Calculate your GPA easily with our responsive grade calculator. Enter your grades and credits to get instant results.">
+  <meta name="keywords" content="GPA calculator, grade calculator, student tools, academic calculator">
+  <title>Grade Point Calculator - Calculate Your GPA</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <h1>Semester Grade Point Calculator - REC</h1>
+      <p>Calculate your SGPA with ease - and get instant results</p>
+    </header>
+
+    <!-- Main Calculator Card -->
+    <main class="card">
+      <!-- Table Header -->
+      <div class="table-header">
+        <div class="header-cell">Subject</div>
+        <div class="header-cell">Select Grade</div>
+        <div class="header-cell">Select Credit</div>
+        <div class="header-cell"></div>
+      </div>
+
+      <!-- Subjects Container -->
+      <div id="subjectsContainer" class="subjects-container">
+        <!-- Initial subject row will be added by JavaScript -->
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="actions">
+        <button id="addSubjectBtn" class="btn btn-secondary" type="button">
+          <span>➕</span>
+          Add Subject
+        </button>
+      </div>
+
+      <!-- Calculate Button -->
+      <div class="calculate-section">
+        <button id="calculateBtn" class="btn btn-success" type="button">
+          <span>🎯</span>
+          Calculate GPA
+        </button>
+      </div>
+
+      <!-- Results Section -->
+      <div id="results" class="results">
+        <h2>Your Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <div class="result-label">Total Credits</div>
+            <div class="result-value" id="totalCredits">0</div>
+          </div>
+          <div class="result-item">
+            <div class="result-label">Total Grade Points</div>
+            <div class="result-value" id="totalGradePoints">0</div>
+          </div>
+        </div>
+        <div class="gpa-display">
+          <div class="result-label">Your GPA</div>
+          <div class="result-value" id="gpaValue">0.00</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer style="text-align:center; margin-top:3rem; padding-top:2rem; color:#b4b4c8; font-size:0.9rem">
+      <p>© 2026 mdsohhh</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script-rec.js"></script>
+</body>
+
+</html>
