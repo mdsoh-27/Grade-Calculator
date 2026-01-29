@@ -5,6 +5,7 @@ const GRADE_POINTS = {
   'A': 8,
   'B': 7,
   'C': 6,
+  'D': 5,
   'F': 0
 };
 

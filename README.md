@@ -4,11 +4,11 @@ A responsive web-based GPA calculator for Raghu Engineering College (REC) and Ra
 
 ## Features
 
-- 🎓 Separate calculators for REC and RIT with different grading scales
-- 📱 Fully responsive design
-- 🎨 Modern dark theme with glassmorphism effects
-- ⚡ Zero dependencies - pure HTML, CSS, and JavaScript
-- 🧮 Real-time GPA calculation
+- Separate calculators for REC and RIT with different grading scales
+- Fully responsive design
+- Modern dark theme with glassmorphism effects
+- Zero dependencies - pure HTML, CSS, and JavaScript
+- Real-time GPA calculation
 
 ## Grading Scales
 
@@ -18,6 +18,7 @@ A responsive web-based GPA calculator for Raghu Engineering College (REC) and Ra
 - A = 8 points
 - B = 7 points
 - C = 6 points
+- D = 5 points
 - F = 0 points (Fail)
 
 ### RIT (Raghu Institute of Technology)
@@ -26,6 +27,7 @@ A responsive web-based GPA calculator for Raghu Engineering College (REC) and Ra
 - B = 8 points
 - C = 7 points
 - D = 6 points
+- E = 5 points
 - F = 0 points (Fail)
 
 ## How to Use
